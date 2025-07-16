@@ -1,0 +1,58 @@
+//! line-break class
+.line-break1 {
+  @include line-break(1);
+}
+
+.line-break2 {
+  @include line-break();
+}
+
+.line-break3 {
+  @include line-break(3);
+}
+//! width class
+.container-80 {
+  width: 80%;
+  margin: auto;
+}
+
+//! flex custom class
+
+.flex-cen {
+  @include centerized-tag();
+}
+
+.flex-bet {
+  @include centerized-tag($justify: space-between);
+}
+
+//! Position custom class
+
+.pos-cen {
+  @include position-center();
+}
+
+//! Font custom class
+.fs-1 {
+  font-size: $fs-1 !important;
+}
+
+.fs-2 {
+  font-size: $fs-2 !important;
+}
+
+.fs-3 {
+  font-size: $fs-3 !important;
+}
+
+.fs-4 {
+  font-size: $fs-4 !important;
+}
+
+.fs-5 {
+  font-size: $fs-5 !important;
+}
+
+.fs-6 {
+  font-size: $fs-6 !important;
+}

@@ -1,0 +1,3 @@
+@function double-size($font-size) {
+  @return $font-size * 2;
+}

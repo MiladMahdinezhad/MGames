@@ -1,0 +1,172 @@
+//! popular style start
+.popular {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2.5rem 0;
+  &__content {
+    width: 100%;
+    margin: 0 auto;
+    &-items {
+      width: 100%;
+      margin-top: 2.5rem;
+    }
+    &-item {
+      width: 35rem;
+      height: 50rem;
+      @include responsive(m) {
+        width: 60rem;
+        height: 75rem;
+      }
+
+      &-image {
+        width: 100%;
+        height: 30rem;
+        padding: 10px;
+        background-color: $color-primary;
+        border-radius: 10px;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        @include responsive(m) {
+          height: 50rem;
+        }
+        &:hover {
+          transform: translateY(-15px);
+          .popular__content-item-glass {
+            width: 100%;
+            opacity: 0.7;
+            cursor: pointer;
+          }
+        }
+        &.active {
+          border: 2px solid $color-secondary;
+        }
+      }
+      &-pic {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      &-glass {
+        width: 17rem;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 0.4s ease-in-out;
+
+        &--1 {
+          width: 100%;
+          height: 100%;
+          background-color: #f8c868;
+          clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+        &--2 {
+          width: 100%;
+          height: 100%;
+          background-color: #dda533;
+          clip-path: polygon(37% 0, 100% 0, 100% 100%, 7% 100%);
+          @include centerized-tag();
+          color: $color-white;
+          font-size: $font-size-title;
+          font-weight: bold;
+        }
+      }
+      &-description {
+        margin-top: 2rem;
+        width: 100%;
+        height: 15rem;
+        color: $color-white;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10px;
+      }
+      &-textleft {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & > h3 {
+          font-size: 1.9rem;
+          font-weight: bold;
+          @include responsive(m) {
+            font-size: 1.8rem;
+          }
+        }
+        & > p {
+          font-size: $font-size-sm;
+          text-align: justify;
+          @include responsive(m) {
+            font-size: 1.6rem;
+          }
+        }
+      }
+      &-view {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      &-viewcircle {
+        width: 15px;
+        height: 15px;
+        background-color: $color-green;
+        border-radius: 50%;
+        border: 2px solid $color-black;
+        box-shadow: 0px 0px 3px 3px $color-green;
+      }
+      &-viewtext {
+        font-size: 10px;
+        font-weight: 600;
+        @include responsive(m) {
+          font-size: 1.4rem;
+        }
+      }
+      &-textright {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+      &-team {
+        @include centerized-tag();
+        gap: 10px;
+        align-items: baseline;
+      }
+      &-teamicon {
+        width: 15px;
+        height: 15px;
+      }
+      &-teampic {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      &-teamname {
+        color: $color-white;
+        font-size: $font-size-default;
+        font-weight: 500;
+        text-align: justify;
+        @include responsive(m) {
+          font-size: 1.7rem;
+        }
+      }
+      &-teamscore {
+        color: $color-orange;
+        @include centerized-tag();
+        width: 50%;
+        @include responsive(m) {
+          font-size: 1.7rem;
+        }
+      }
+    }
+  }
+}

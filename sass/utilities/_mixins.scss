@@ -1,0 +1,57 @@
+@mixin centerized-tag($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin position-center() {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@mixin line-break($line: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+//!- Break point responsive mixin ----
+
+@mixin responsive($breakpoint) {
+  //! Break point responsive mixin - 1400px
+  @if $breakpoint == eel {
+    @media only screen and (max-width: 87.5em) {
+      @content;
+    }
+  }
+  //! Break point responsive mixin - 1200px
+  @if $breakpoint == el {
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+  //! Break point responsive mixin - 992px
+  @if $breakpoint == l {
+    @media only screen and (max-width: 62em) {
+      @content;
+    }
+  }
+  //! Break point responsive mixin - 768px
+  @if $breakpoint == m {
+    @media only screen and (max-width: 48em) {
+      @content;
+    }
+  }
+  //! Break point responsive mixin - 576px
+  @if $breakpoint == s {
+    @media only screen and (max-width: 36em) {
+      @content;
+    }
+  }
+}

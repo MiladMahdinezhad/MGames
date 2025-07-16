@@ -1,0 +1,84 @@
+//! footer style start
+
+.footer {
+  width: 100%;
+  background-color: $color-primary;
+  padding-bottom: 3rem;
+  &__content {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    @include centerized-tag();
+    @include responsive(eel) {
+      flex-wrap: wrap;
+      @include responsive(l) {
+        width: 93%;
+      }
+      @include responsive(s) {
+        row-gap: 3rem;
+      }
+    }
+    &-sec01 {
+      @include responsive(s) {
+        width: 45%;
+      }
+      width: 45%;
+      @include responsive(s) {
+        width: 45%;
+      }
+    }
+    &-sec02 {
+      width: 45%;
+      @include centerized-tag();
+      gap: 25px;
+      @include responsive(s) {
+        width: 90%;
+      }
+      &-link {
+        font-size: 1.2rem;
+        color: $color-subtitle;
+        font-weight: bold;
+      }
+    }
+    &-sec03 {
+      width: 45%;
+      @include centerized-tag();
+      gap: 1.5rem;
+      @include responsive(s) {
+        width: 90%;
+      }
+      &-btn {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 5px;
+        background-color: $color-bg;
+        @include centerized-tag();
+        box-shadow: 0 0 5px -3px $color-white;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          transform: translateY(-5px);
+          .footer__content-sec03-icon {
+            transform: rotateY(360deg);
+            color: $color-secondary;
+          }
+        }
+      }
+      &-icon {
+        color: $color-white;
+        font-size: 20px;
+        transition: all 0.8s ease-in-out;
+      }
+    }
+    &-sec04 {
+      width: 45%;
+      @include responsive(s) {
+        width: 90%;
+      }
+      @include centerized-tag() span {
+        font-size: 12px;
+        color: $color-subtitle;
+      }
+    }
+  }
+}

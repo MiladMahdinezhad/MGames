@@ -1,0 +1,479 @@
+//! tournaments style start
+.tournaments {
+  width: 90%;
+  padding: 25px 0;
+  margin: 0 auto;
+  &__content {
+    width: 100%;
+
+    margin: 0 auto;
+    &-main {
+      width: 100%;
+      height: 760px;
+      @include centerized-tag(space-evenly);
+      margin-top: 25px;
+      flex-wrap: wrap;
+      @include responsive(el) {
+        height: auto;
+        flex-direction: column;
+        row-gap: 5rem;
+      }
+    }
+    &-left {
+      height: 100%;
+      width: 72%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      @include responsive(el) {
+        width: 100%;
+        padding: 3rem;
+      }
+    }
+    &-right {
+      height: 100%;
+      width: 25%;
+      background-color: $color-primary;
+      border-radius: 10px;
+      @include responsive(el) {
+        width: 93%;
+        padding: 1.5rem;
+      }
+    }
+  }
+  //! tournaments battle style start
+  &__battle {
+    background-color: $color-primary;
+    border-radius: 10px;
+    width: 100%;
+    @include centerized-tag(space-between);
+    padding: 20px;
+    @include responsive(el) {
+      flex-direction: column;
+      row-gap: 5rem;
+      width: 100%;
+    }
+    //! tournaments battle left style start
+    &-left {
+      width: 60%;
+      height: 100%;
+      @include responsive(el) {
+        width: 100%;
+      }
+    }
+    &-header {
+      font-weight: bold;
+    }
+    &-title {
+      color: $color-white;
+      font-size: $font-size-title;
+      margin-bottom: 10px;
+    }
+    &-subtitle {
+      color: $color-green;
+      font-size: 1.4rem;
+    }
+    &-teams {
+      @include centerized-tag(space-between);
+      margin-top: 50px;
+    }
+    &-team {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &-flag {
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50%;
+      @include centerized-tag();
+      overflow: hidden;
+      box-shadow: 0px 0px 12px 1px $color-tertiary;
+      @include responsive(s) {
+        width: 5.5rem;
+        height: 5.5rem;
+      }
+      &--1 {
+        background-image: conic-gradient(#ff2b28 45%, #e73bf3 0);
+      }
+      &--2 {
+        width: 10rem;
+        height: 10rem;
+        @include responsive(s) {
+          width: 7.5rem;
+          height: 7.5rem;
+        }
+        background-image: conic-gradient(red 45%, blue 0);
+      }
+      &--3 {
+        background-image: conic-gradient(#eca819 45%, blue 0);
+      }
+    }
+    &-circle {
+      width: 95%;
+      height: 95%;
+      border-radius: 50%;
+      @include centerized-tag();
+
+      &--1 {
+        background: radial-gradient(
+          circle,
+          #9c091c 0,
+          #e31c3b 50%,
+          #323676 100%
+        );
+      }
+      &--2 {
+        background: radial-gradient(
+          circle,
+          #0658c6 0,
+          #0c678a 50%,
+          #000307 100%
+        );
+      }
+      &--3 {
+        background: radial-gradient(
+          circle,
+          #eca819 0,
+          #eca819 50%,
+          #000307 100%
+        );
+      }
+    }
+    &-icon {
+      width: 50%;
+      object-fit: cover;
+    }
+    &-sword {
+      width: 5rem;
+      @include responsive(s) {
+        width: 2.5rem;
+      }
+    }
+    &-info {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 25px;
+      gap: 6px;
+    }
+    &-name {
+      color: $color-white;
+      font-weight: bold;
+    }
+    &-count {
+      color: $color-subtitle;
+      font-size: $font-size-sm;
+      @include responsive(l) {
+        font-size: 1.3rem;
+      }
+    }
+    &-progress {
+      width: 100%;
+      height: 16px;
+      background-color: $color-bg;
+      border-radius: 15px;
+      margin-top: 25px;
+      &-percent {
+        width: 75%;
+        height: 100%;
+        border-radius: 15px;
+        @include centerized-tag();
+        background: linear-gradient(
+          120deg,
+          yellow 0%,
+          #e4ec7f 50%,
+          #ffffb7 75%
+        );
+        color: $color-black;
+        font-size: $font-size-sm;
+      }
+    }
+    //! tournaments battle right style start
+    &-right {
+      width: 35%;
+      height: 100%;
+      @include responsive(el) {
+        width: 100%;
+        padding: 1.5rem;
+      }
+    }
+    &-thead {
+      width: 100%;
+      @include centerized-tag(space-between);
+      height: 35px;
+
+      &-icon {
+        border-radius: 5px;
+        height: 100%;
+        color: $color-white;
+        background-color: $color-secondary;
+        font-size: 1.9rem;
+        padding: 6px;
+        @include centerized-tag();
+        cursor: pointer;
+      }
+      &-title {
+        height: 100%;
+        width: 15rem;
+        border-radius: 5px;
+        color: $color-white;
+        background-color: $color-secondary;
+        @include centerized-tag();
+      }
+    }
+    &-tbody {
+    }
+    &-items {
+      margin-top: 10px;
+    }
+    &-item {
+      @include centerized-tag(space-between);
+      padding: 10px;
+      background-color: $color-bg;
+      border-radius: 5px;
+      height: 6rem;
+      color: $color-white;
+      margin-top: 5px;
+      &:hover {
+        background-color: $color-red-high;
+        .tournaments__battle-item-sec01 {
+          background-color: $color-red-dark;
+        }
+        .tournaments__battle-item-sec06 {
+          background-color: $color-red-dark;
+        }
+      }
+      &.active {
+        background-color: $color-red-high;
+        .tournaments__battle-item-sec01 {
+          background-color: $color-red-dark;
+        }
+        .tournaments__battle-item-sec06 {
+          background-color: $color-red-dark;
+        }
+      }
+
+      &-name {
+        height: 100%;
+        @include centerized-tag();
+        gap: 8px;
+      }
+      &-sec01 {
+        background-color: $color-primary;
+        width: 3rem;
+        font-size: $font-size-default;
+        padding: 0.5rem;
+        @include centerized-tag();
+        border-radius: 5px;
+      }
+      &-sec02 {
+        width: 2rem;
+        object-fit: cover;
+      }
+      &-sec03 {
+        font-size: 1.3rem;
+      }
+      &-score {
+        height: 100%;
+        @include centerized-tag();
+        gap: 8px;
+      }
+      &-sec04 {
+        width: 2rem;
+        object-fit: cover;
+      }
+      &-sec05 {
+        font-size: $font-size-sm;
+        font-weight: bold;
+        @include responsive(l) {
+          font-size: 1.3rem;
+        }
+      }
+      &-sec06 {
+        font-size: $font-size-sm;
+        background-color: $color-primary;
+        font-weight: bold;
+        width: 3rem;
+        padding: 1rem;
+        @include centerized-tag();
+        border-radius: 5px;
+        @include responsive(l) {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+  //! tournaments battle info style start
+  &__info {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &-item {
+      background-color: $color-primary;
+      border-radius: 10px;
+      width: 100%;
+      height: 40%;
+      padding: 15px;
+      position: relative;
+      overflow: hidden;
+      @include centerized-tag(space-between);
+      &-sec01 {
+        @include centerized-tag();
+        gap: 10px;
+      }
+      &-sec02 {
+        @include centerized-tag();
+        flex-direction: column;
+        gap: 5px;
+
+        &::before {
+          content: "";
+          width: 2px;
+          height: 7.5rem;
+          background-color: #979797;
+          position: absolute;
+          left: -40px;
+          transform: rotate(27deg);
+          opacity: 0.2;
+        }
+      }
+      &-sec03 {
+        width: 15rem;
+      }
+      &-key {
+        color: $color-white;
+        font-size: 1.3rem;
+      }
+      &-value {
+        color: $color-subtitle;
+        font-size: 1.3rem;
+      }
+    }
+    &-image {
+      height: 8rem;
+      width: 8rem;
+    }
+    &-pic {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    &-description {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      &-line01 {
+        color: $color-white;
+        font-size: 1.3rem;
+      }
+      &-line02 {
+        color: $color-subtitle;
+        font-size: $font-size-sm;
+      }
+    }
+    &-bg {
+      width: 15rem;
+      height: 100%;
+      background: linear-gradient(
+        114deg,
+        $color-tertiary-darker 0,
+        $color-tertiary-darker 28%,
+        $color-tertiary 28%,
+        $color-tertiary 100%
+      );
+      position: absolute;
+      top: 0;
+      right: 0;
+      clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+      @include centerized-tag();
+      &.bg02 {
+        background: linear-gradient(
+          114deg,
+          $color-secondary-darker 0,
+          $color-secondary-darker 28%,
+          $color-secondary 28%,
+          $color-secondary 100%
+        );
+      }
+      &-text {
+        color: $color-white;
+        font-weight: bold;
+        font-size: $font-size-title;
+        font-family: $font-rubik;
+      }
+    }
+    &-more {
+      background-color: $color-secondary;
+      border-radius: 10px;
+      width: 100%;
+      height: 20%;
+      padding: 0.5rem 0;
+      color: $color-white;
+      font-size: $font-size-default;
+      font-weight: bold;
+      @include centerized-tag();
+      cursor: pointer;
+    }
+  }
+  //! tournaments closing (right) info style start
+  &__closing {
+    width: 100%;
+    padding: 20px 10px;
+    &-header {
+      font-weight: bold;
+    }
+    &-items {
+      width: 100%;
+      @include centerized-tag();
+      flex-direction: column;
+    }
+    &-item {
+      margin-top: 40px;
+      width: 100%;
+      @include centerized-tag();
+      justify-content: space-between;
+
+      &-score {
+        color: $color-white;
+        font-weight: bold;
+        font-size: $font-size-title;
+        @include centerized-tag();
+        position: relative;
+        top: -30px;
+      }
+    }
+    &-btn {
+      margin-top: 8rem;
+      margin-bottom: 1rem;
+      width: 90%;
+      height: 4.5rem;
+      cursor: pointer;
+      @include centerized-tag();
+      background: linear-gradient(120deg, yellow 0%, #e4ec7f 50%, #ffffb7 75%);
+      filter: brightness(90%);
+      transition: all 0.5s ease-in-out;
+      border-radius: 1rem;
+      &:hover {
+        .tournaments__closing-link {
+          letter-spacing: 4px;
+        }
+        filter: brightness(120%);
+      }
+    }
+    &-link {
+      @include centerized-tag();
+      color: $color-black;
+      font-weight: bold;
+      font-size: $font-size-default;
+      transition: all 0.5s ease-in-out;
+      text-decoration: none;
+    }
+    &-name {
+      font-size: 1.6rem;
+    }
+  }
+}

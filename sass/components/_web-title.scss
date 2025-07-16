@@ -1,0 +1,38 @@
+.web-title {
+  @include centerized-tag(space-between);
+  &__title {
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &-item {
+      color: $color-white;
+      font-size: $font-size-default;
+      font-weight: bold;
+      line-height: 35px;
+      cursor: pointer;
+      &.active {
+        color: $color-secondary;
+        border-top: 2px solid $color-secondary;
+      }
+    }
+  }
+  &__btns {
+    @include centerized-tag();
+    gap: 10px;
+  }
+  &__btn {
+    width: 40px;
+    height: 40px;
+    color: white;
+    @include centerized-tag();
+    border-radius: 6px;
+    cursor: pointer;
+    &.active {
+      background-color: $color-secondary;
+    }
+  }
+  &__icon {
+  }
+}

@@ -1,0 +1,44 @@
+/*!---------------------------- Reset Styles -------------------------*/
+html {
+  font-size: 62.5%;
+
+  @include responsive(el) {
+    font-size: 58.5%;
+  }
+  @include responsive(l) {
+    font-size: 56.25%;
+  }
+  @include responsive(m) {
+    font-size: 50%;
+  }
+  @include responsive(s) {
+    font-size: 43.75%;
+  }
+}
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  margin: 0px;
+  --bs-body-font-size: 1.6rem;
+  direction: ltr;
+  font-family: $font-poppins;
+  font-weight: 500;
+  background-color: $color-bg;
+}

@@ -1,0 +1,103 @@
+//! header style start
+.header {
+  padding: 1rem 0;
+  width: 100%;
+  height: 60px;
+  position: relative;
+  &__hamburger {
+    @include responsive(l) {
+      display: flex !important;
+      position: absolute;
+      left: 1rem;
+      cursor: pointer;
+    }
+    &-pic {
+      width: 5rem !important;
+      height: auto;
+    }
+  }
+  &__content {
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 1.5rem;
+    @include centerized-tag(flex-end);
+    //! header-search style start
+    &-search {
+      @include centerized-tag();
+      gap: 15px;
+      position: relative;
+      height: 100%;
+    }
+    &-input {
+      height: 100%;
+      width: 40rem;
+      background-color: $color-primary;
+      border-radius: 20px;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      color: $color-filter;
+    }
+    &-circle {
+      width: 40px;
+      height: 40px;
+      background-color: $color-secondary;
+      border-radius: 50%;
+      @include centerized-tag();
+      color: $color-white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+    }
+    //! header-bell style start
+    &-bell {
+      width: 45px;
+      height: 100%;
+      color: $color-white;
+      cursor: pointer;
+      @include centerized-tag();
+      position: relative;
+      &-icon {
+        font-size: 25px;
+      }
+      &-notifiction {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $color-secondary;
+        color: $color-white;
+        font-size: 10px;
+        @include centerized-tag();
+        position: absolute;
+        top: -2px;
+        right: 2px;
+      }
+    }
+    //! header-user style start
+    &-user {
+      &-text {
+        color: $color-white;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+    //! header-avatar style start
+    &-avatar {
+      display: flex;
+      cursor: pointer;
+      &-image {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid $color-secondary;
+        padding: 1px;
+      }
+      &-pic {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

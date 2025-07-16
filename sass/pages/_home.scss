@@ -1,0 +1,9 @@
+.main {
+  display: flex;
+}
+.content {
+  width: 80%;
+  @include responsive(l) {
+    width: 100%;
+  }
+}
